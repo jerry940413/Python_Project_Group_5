@@ -8,10 +8,10 @@
     print("  □ = 未翻開")
     print("  數字 = 周圍地雷數")
     print("  * = 地雷（遊戲結束）\n")
-
+   ```
 #顯示棋盤目前狀態
 def show_board(board, revealed):
-    ```
+   ```
     print("\n   " + " ".join([str(i) for i in range(len(board[0]))]))
     print("  " + "--" * len(board[0]))
     for i in range(len(board)):
@@ -23,3 +23,4 @@ def show_board(board, revealed):
                 row_display.append("□")
         print(f"{i}| " + " ".join(row_display))
     print()
+  ```
