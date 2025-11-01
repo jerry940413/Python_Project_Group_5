@@ -1,0 +1,14 @@
+#顯示棋盤目前狀態
+def show_board(board, revealed):
+```
+    print("\n   " + " ".join([str(i) for i in range(len(board[0]))]))
+    print("  " + "--" * len(board[0]))
+    for i in range(len(board)):
+        row_display = []
+        for j in range(len(board[0])):
+            if revealed[i][j]:
+                row_display.append(board[i][j])
+            else:
+                row_display.append("□")
+        print(f"{i}| " + " ".join(row_display))
+    print()
