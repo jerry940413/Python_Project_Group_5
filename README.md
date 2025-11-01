@@ -18,20 +18,38 @@
     print("  □ = 未翻開")
     print("  🚩 = 旗幟")
     print("  數字 = 周圍地雷數 (1~8)")
-    print("  💣 = 地雷（遊戲結束）\n")
+    print("  * = 地雷（遊戲結束）\n")
    ```
 #顯示棋盤目前狀態
-def show_board(board, revealed):
+def show_board(board, revealed, flag_board, rows, cols):
    ```
-    print("\n   " + " ".join([str(i) for i in range(len(board[0]))]))
-    print("  " + "--" * len(board[0]))
-    for i in range(len(board)):
-        row_display = []
-        for j in range(len(board[0])):
-            if revealed[i][j]:
-                row_display.append(board[i][j])
+
+    # 顯示欄位編號
+    print("\n    ", end="")
+    for c in range(cols):
+        print(f"{c+1:2}", end=" ")      # 玩家視角 1-based
+    print("\n   " + "---" * cols)
+
+    # 顯示每一列
+    for r in range(rows):
+        print(f"{r+1:2} |", end="")     # 行數顯示 (1-based)
+
+        for c in range(cols):
+            if flag_board[r][c]:
+                ch = "🚩"               # 插旗
+            elif revealed[r][c]:
+                val = board[r][c]
+                if val == -1:
+                    ch = "*"           # 地雷
+                elif val == 0:
+                    ch = " "            # 空格
+                else:
+                    ch = str(val)       # 1~8 數字
             else:
-                row_display.append("□")
-        print(f"{i}| " + " ".join(row_display))
-    print()
-  ```
+                ch = "□"                # 未翻格
+
+            print(f" {ch}", end="")
+
+        print(" |")                     # 每行右邊框
+
+    print("   " + "---" * cols + "\n")  # 底線
