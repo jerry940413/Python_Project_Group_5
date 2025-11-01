@@ -1,13 +1,24 @@
   #介紹遊戲規則
   def introduction():
-   ``` 
+   ```
+    print("=" * 30)
     print("歡迎來到《採地雷遊戲》!")
-    print("請翻開所有安全的格子，不要踩到地雷\n")
+    print("=" * 30)
+    print("遊戲目標：翻開所有安全的格子，不要踩到地雷。")
+    
+    print("\n【操作與顯示說明】")
+    # 說明操作模式 (來自夥伴的 play_game 邏輯)
     print("請依序輸入列與行的編號，例如：「1 2」表示第1列第2行。")
-    print("顯示符號：")
+    print("  - 輸入 'flag' 切換到插旗模式。")
+    print("  - 輸入 'dig' 切換到挖掘模式。")
+    print("  - 輸入 'restart' 重新開始新遊戲。")
+    
+    # 說明顯示符號
+    print("\n【顯示符號】")
     print("  □ = 未翻開")
-    print("  數字 = 周圍地雷數")
-    print("  * = 地雷（遊戲結束）\n")
+    print("  🚩 = 旗幟")
+    print("  數字 = 周圍地雷數 (1~8)")
+    print("  💣 = 地雷（遊戲結束）\n")
    ```
 #顯示棋盤目前狀態
 def show_board(board, revealed):
