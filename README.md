@@ -19,7 +19,14 @@ def show_board(board, revealed):
 
 def introduction():
     # 遊戲介紹
-    return
+    print("歡迎來到《採地雷遊戲》!")
+    print("請翻開所有安全的格子，不要踩到地雷\n")
+    print("請依序輸入列與行的編號，例如：「1 2」表示第1列第2行。")
+    print("顯示符號：")
+    print("  □ = 未翻開")
+    print("  數字 = 周圍地雷數")
+    print("  * = 地雷（遊戲結束）\n")
+
 #以上由謝杰叡負責
 
 def choose_difficulty():
